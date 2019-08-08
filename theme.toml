@@ -3,7 +3,7 @@
 
 name = "charity-hugo-theme"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
+licenselink = "https://github.com/TenSketch/charity-hugo-theme/blob/master/LICENSE"
 description = ""
 homepage = " https://github.com/TenSketch/charity-hugo-theme.git"
 tags = []
@@ -11,6 +11,6 @@ features = []
 min_version = "0.41"
 
 [author]
-  name = ""
-  homepage = ""
+  name = "TenSketch"
+  homepage = "https://www.tensketch.com/"
 
