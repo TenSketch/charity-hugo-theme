@@ -30,7 +30,7 @@ p {
     margin-bottom: 0px;
   }
   h2 {
-    font-size: 44px;
+    font-size: 38px;
     line-height: 28px;
     color: #14182d;
     font-weight: 600;
@@ -97,7 +97,7 @@ p {
   vertical-align: middle;
 }
 .banner .banner_text h1 {
-    font-size: 55px;
+    font-size: 44px;
     text-transform: capitalize;
     font-weight: 700;
     margin-bottom: 22px;
@@ -121,12 +121,8 @@ a.hover {
 }
 /* navbar shrink on scroll */
 @media (max-width: 576px) {
-  body {
-    padding-top: 94px;
-  }
-  .navbar-dark {
-    background-color: #000;
-  }
+ 
+ 
   .carousel-caption {
     bottom: 10%;
     margin-bottom: 0;
