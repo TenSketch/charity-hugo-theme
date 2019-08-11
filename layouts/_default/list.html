@@ -33,7 +33,7 @@
 </div>
 {{end}}
 {{define "banner"}}
-<section class="banner">
+<section class="banner parallax">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 offset-lg-6">
@@ -130,51 +130,18 @@
     <div class="row justify-content-center">
         <div class="col-xl-8">
             <div class="section_tittle text-center">
-                <a href="#" class="btn btn-info btn2 mt-3">Read more</a>
+                {{range $index, $val := .Site.Taxonomies.tags.projects}}
+                <a href="{{$val.Page.Permalink}}" class="btn btn-info btn2 mt-3">Read more</a>
+                {{end}}
             </div>
         </div>
     </div>
 </div>
 {{end}}
-{{define "about"}}
-<section id="about" class="be_part">
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6">
-                <div class="be_part_text">
-                    <h2>Vision</h2>
-                    <p>Vision of the Real Charitable Trust is to protect the human with all rights and human dignity
-                        through basic education and humanistic service to the orphan, children, youth, women and aged
-                        persons in difficult circumstances and in distress in rural and urban. Secondly focused on
-                        protecting the environment, our Mother earth through solid waste management programmes, guarding
-                        nature with the planting and controlling pollution by awareness programmes.</p>
-                    <a href="#" class="btn btn-info btn2">learn more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <img src="/images/Charity.jpg" alt="" class="be_img">
-</section>
-<section class="py-4">
-    <div class="container p-3">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Mission</h2>
-                    <ul>
-                            <li>Enhancing the people for sustainable development through community mobilization and organization  </li>
-                            <li>Empowering the children in distress and difficult situation through Non-Formal Education, evening tuition centres and sports club.</li>
-                            <li>Educate the youth for taking up the role of leadership in society through carrier guidance and leadership training programmes</li>
-                            <li>Facilitating women to be empowered through the formation of self-help groups and women's rights education and safety and entrepreneurial training. </li>
-                            <li>Promoting community health and cleanliness through solid waste management and health-related programmes for ensuring healthy living.</li>
-                        </ul>
-            </div>
-        </div>
-    </div>
-</section>
-{{end}}
+
 
 {{define "volunteer"}}
-<section id="volunteer" class="intro_video_bg">
+<section id="volunteer" class="intro_video_bg parallax">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-6">
@@ -274,6 +241,42 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+{{end}}
+{{define "about"}}
+<section id="about" class="be_part parallax">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <div class="col-lg-6">
+                <div class="be_part_text">
+                    <h2>Vision</h2>
+                    <p>Vision of the Real Charitable Trust is to protect the human with all rights and human dignity
+                        through basic education and humanistic service to the orphan, children, youth, women and aged
+                        persons in difficult circumstances and in distress in rural and urban. Secondly focused on
+                        protecting the environment, our Mother earth through solid waste management programmes, guarding
+                        nature with the planting and controlling pollution by awareness programmes.</p>
+                    <a href="#" class="btn btn-info btn2">learn more</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <img src="/images/Charity.jpg" alt="" class="be_img">
+</section>
+<section class="py-4">
+    <div class="container p-3">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Mission</h2>
+                    <ul>
+                            <li>Enhancing the people for sustainable development through community mobilization and organization  </li>
+                            <li>Empowering the children in distress and difficult situation through Non-Formal Education, evening tuition centres and sports club.</li>
+                            <li>Educate the youth for taking up the role of leadership in society through carrier guidance and leadership training programmes</li>
+                            <li>Facilitating women to be empowered through the formation of self-help groups and women's rights education and safety and entrepreneurial training. </li>
+                            <li>Promoting community health and cleanliness through solid waste management and health-related programmes for ensuring healthy living.</li>
+                        </ul>
             </div>
         </div>
     </div>
