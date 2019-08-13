@@ -1,0 +1,15 @@
+<nav class="navbar fixed-bottom navbar-dark ml-auto">
+    <a class="navbar-brand" href="#"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    {{range $index, $val := .Site.Taxonomies.tags.pagenav}}
+    <div class="navbar-collapse collapse" id="collapsingNavbar">
+        <ul class="navbar-nav text-right">
+            <li class="nav-item">
+                    <a class="nav-link" href="#{{.Description}}">{{.Title}}</a>
+            </li>
+        </ul>
+    </div>
+    {{end}}
+</nav>
