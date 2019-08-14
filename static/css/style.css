@@ -7,6 +7,7 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Roboto", sans-serif;
+  color: #000
   /* padding-top: 10px */
 }
 html,
@@ -22,6 +23,7 @@ h5,
 h6 {
   font-family: "Playfair Display", serif;
   margin: 2rem 0rem;
+  font-weight: 600
 }
 p {
   font-family: "Roboto", sans-serif;
@@ -565,28 +567,28 @@ a.hover {
 }
 .be_part .be_img {
   position: absolute;
-  right: 0;
-  top: 48%;
-  max-width: 51%;
+  right: 4%;
+  top: 25%;
+  max-width: 40%;
   border-left: 3px solid #fff;
   border-top: 3px solid #fff;
   border-radius: 50%;
 }
 @media only screen and (min-width: 1200px) and (max-width: 1440px) {
   .be_part .be_img {
-    max-width: 53%;
-    top: 64%;
+    max-width: 45%;
+    top:20%;
   }
 }
 @media only screen and (min-width: 1440px) and (max-width: 1680px) {
   .be_part .be_img {
-    max-width: 50%;
-    top: 54%;
+    /* max-width: 50%; */
+    top: 25%;
   }
 }
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   .be_part .be_img {
-    top: 58%;
+    top: 25%;
   }
 }
 @media (max-width: 991px) {
@@ -1025,6 +1027,9 @@ a.hover {
   background-color: #0d101d;
   padding: 100px 0px 20px;
 }
+label{
+  color: #fff;
+}
 @media (max-width: 991px) {
   .footer-area {
     padding: 70px 0px 30px;
@@ -1037,6 +1042,9 @@ a.hover {
 .footer-area .form-inline {
   position: relative;
 }
+.fa-facebook:hover {
+  color: #3b5998;
+}
 @media (max-width: 991px) {
   .footer-area .single-footer-widget {
     margin-bottom: 30px;
@@ -1046,7 +1054,7 @@ a.hover {
   font-size: 14px;
   line-height: 1.8;
   margin-bottom: 20px;
-  color: #777777;
+  color: #fff
 }
 .footer-area .single-footer-widget h4 {
   margin-bottom: 28px;
@@ -1066,9 +1074,9 @@ a.hover {
 }
 .footer-area .single-footer-widget ul li {
   margin-bottom: 10px;
+  
 }
 .footer-area .single-footer-widget ul li a {
-  color: #555555;
   -webkit-transition: 0.5s;
   transition: 0.5s;
   font-size: 15px;
@@ -1105,9 +1113,8 @@ a.hover {
 .footer-area .footer_2 .social_icon {
   margin-top: 27px;
 }
-.footer-area .footer_2 .social_icon a {
-  color: #cccccc;
-  font-size: 14px;
+.footer-area  .social_icon a {
+  color: #fff;
   margin-right: 20px;
 }
 .footer-area .footer_2 .social_icon a:hover {
@@ -1185,6 +1192,7 @@ a.hover {
   width: 100%;
   height: auto;
   border-radius: 50px !important;
+  padding: .5rem .75rem
 }
 .footer-area .btn:hover {
   background-color: #fff;
@@ -1203,7 +1211,9 @@ a.hover {
   border-top: 1px solid #262834;
 }
 .footer-area .copyright_part_text p {
-  font-size: 15px;
+  font-size: 1.2rem;
+  color: #fff;
+  text-align: center
 }
 @media (max-width: 576px) {
   .footer-area .copyright_part_text {
@@ -1306,7 +1316,7 @@ a.hover {
 #legal {
   background-image: url("../images/legal-bg.jpg");
 }
-#about h2, #legal h2 {
+#legal h2 {
   text-align: center;
 }
 #legal h4{
