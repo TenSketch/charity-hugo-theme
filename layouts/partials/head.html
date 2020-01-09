@@ -1,37 +1,35 @@
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=egde">
-    <meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
-    <meta name="generator" content="Hugo 0.55.6">
-    <title>{{ if .Title }}{{ .Title }}{{ end }}</title>
-    {{ if .Params.description }}
-    <meta name="description" content="{{ .Params.description }}">
-    {{ else if .Site.Params.description }}
-    <meta name="description" content="{{ .Site.Params.description }}">
-    {{ end }}
-    {{ if .Params.keywords }}
-    <meta name="keywords" content="{{ .Params.keywords }}">
-    {{ else if .Site.Params.keywords }}
-    <meta name="keywords" content="{{ .Site.Params.keywords }}">
-    {{ end }}
-    <!-- og meta tags -->
-    <meta property="og:url" content="{{.Site.BaseURL}}">
-    <meta property="og:image" content="{{.Site.BaseURL}}images/oglogo.png">
-    {{ if .Params.description }}
-    <meta property="og:description" content="{{ .Params.description }}">
-    {{ else if .Site.Params.description }}
-    <meta property="og:description" content="{{ .Site.Params.description }}">
-    {{ end }}
-    {{ if .Params.keywords }}
-    <meta property="og:keywords" content="{{ .Params.keywords }}">
-    {{ else if .Site.Params.keywords }}
-    <meta property="og:keywords" content="{{ .Site.Params.keywords }}">
-    {{ end }}
-
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
-        
-</head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=egde">
+<meta name="viewport" content="width=device-width, initial-scale=1 shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.55.6">
+<title>{{ if .Title }}{{ .Title }}{{ end }}</title>
+{{ if .Params.description }}
+<meta name="description" content="{{ .Params.description }}">
+{{ else if .Site.Params.description }}
+<meta name="description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ if .Params.keywords }}
+<meta name="keywords" content="{{ .Params.keywords }}">
+{{ else if .Site.Params.keywords }}
+<meta name="keywords" content="{{ .Site.Params.keywords }}">
+{{ end }}
+<!-- og meta tags -->
+<meta property="og:url" content="{{.Site.BaseURL}}">
+<meta property="og:image" content="{{.Site.BaseURL}}images/oglogo.png">
+{{ if .Params.description }}
+<meta property="og:description" content="{{ .Params.description }}">
+{{ else if .Site.Params.description }}
+<meta property="og:description" content="{{ .Site.Params.description }}">
+{{ end }}
+{{ if .Params.keywords }}
+<meta property="og:keywords" content="{{ .Params.keywords }}">
+{{ else if .Site.Params.keywords }}
+<meta property="og:keywords" content="{{ .Site.Params.keywords }}">
+{{ end }}
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/animate.min.css">
+<link rel="stylesheet" href="/css/aos.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.min.css">

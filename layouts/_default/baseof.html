@@ -1,53 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-{{partial "head" .}}
-
+<head>
+    {{partial "head" .}}
+    <link rel="stylesheet" href="/css/jquery.fancybox.min.css">
+</head>
 <body>
     {{partial "header" .}}
     {{block "carousel".}}
     {{end}}
-    {{block "projects".}}
-    {{end}}
-    
     {{block "about".}}
     {{end}}
-    {{block "donate".}}
+    {{block "projects".}}
     {{end}}
-    {{block "strength".}}
+    {{block "gallery".}}
     {{end}}
-   
-    
-      
-    
+    <!-- {{block "donate".}}
+    {{end}} -->
     {{partial "footer" .}}
-    
     {{partial "scripts" .}}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
-    <script>
-    $(document).ready(function(){
-    $('.customer-logos').slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        autoplay: true,
-        autoplaySpeed: 1500,
-        arrows: false,
-        dots: false,
-        pauseOnHover: false,
-        responsive: [{
-            breakpoint: 768,
-            settings: {
-                slidesToShow: 4
-            }
-        }, {
-            breakpoint: 520,
-            settings: {
-                slidesToShow: 3
-            }
-        }]
+    <!-- navbar -->
+<script>
+    // toggle bg color on transparant nav for collapse
+    $(".navbar-toggler").click(function () {
+      $("nav").toggleClass("bg-rct");
+    })
+    // navbar change bg and shrink on scroll
+    $(window).scroll(function () {
+      if ($(document).scrollTop() > 100) {
+        $('.navbar').addClass('affix');
+      } else {
+        $('.navbar').removeClass('affix');
+      }
     });
-});
-</script>
-
+  // navbar animated on scroll
+    $(window).scroll(function () {
+      if ($(document).scrollTop() > 100) {
+        $('.navbar').addClass('animated fadeInDown');
+      } else {
+        $('.navbar').removeClass('animated fadeInDown');
+      }
+    });
+  </script>
+  <!-- <script src="/js/jquery.fancybox.min.js" type="text/javascript"></script> -->
 </body>
-
 </html>

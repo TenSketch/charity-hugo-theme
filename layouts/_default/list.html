@@ -1,27 +1,34 @@
 {{ define "carousel" }}
-<div id="carouselId" class="carousel slide" data-ride="carousel">
-    
-    <div class="carousel-inner" role="listbox">
-        {{range $index, $val := .Site.Taxonomies.tags.slider }}
+<style>
+    .carousel-fade .carousel-inner .carousel-item {
+        transition: -webkit-transform 10s ease;
+        transition: transform 10s ease;
+        transition: transform 10s ease,
+            -webkit-transform 10s ease;
+    }
+</style>
+<div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="10000">
+    <ol class="carousel-indicators d-none d-md-inline-flex">
+        {{range $index, $val := .Site.Taxonomies.tags.slider}}
+        <li data-target="#carouselId" data-slide-to="{{$index}}"></li>
+        {{end}}
+    </ol>
+    <div class="carousel-inner carousel-fade">
+        {{range $index, $val := .Site.Taxonomies.tags.slider}}
         {{if (eq $index 0)}}
-        <div class="carousel-item active">
+        <div class="carousel-item drk active">
             {{ else }}
-            <div class="carousel-item">
+            <div class="carousel-item drk">
                 {{ end }}
-                <img src="{{.Page.Params.Image}}" alt="{{.Title}}">
-                <div class="carousel-caption d-none d-md-block">
-                    <h1>{{.Page.Title }}</h1>
-                    <p>{{.Content}}</p>
+                <img class="d-block img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
+                <div class="carousel-caption d-md-block">
+                    <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1 c>
+                    <h3 class="animated fadeInUp slow delay-2s">{{.Summary}}</h3 class="animated fadeInDown slow">
                 </div>
             </div>
             {{ end }}
         </div>
     </div>
-    <ol class="carousel-indicators">
-        {{range $index, $val := .Site.Taxonomies.tags.slider }}
-        <li data-target="#carouselId" data-slide-to="{{$index}}"></li>
-        {{end}}
-    </ol>
     <a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
@@ -31,21 +38,138 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<script>
+    $(document).ready(function () {
+        jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 10000  // 10 seconds
+    })
+</script>
 {{end}}
-{{define "banner"}}
-<section class="banner parallax">
+{{define "about"}}
+<section id="about" class="py-5 mt-5">
     <div class="container">
-        <div class="row align-items-center">
-            <div class="col-lg-6 offset-lg-6">
-                <div class="banner_text">
-                    <div class="banner_text_iner">
-                        <h1>Real Charitable Trust</h1>
-                        <h2 class="text-light">Bless others with
-                            your gift</h2>
-                        <p>Fish isn't thing there a god whales fruit gathering the second so
-                            third beginning open multiply in land multiply Saw saw lesser tree
-                            fom image his made heaven.</p>
-                        <a href="#" class="btn btn-info btn2 mt-3">Start Donation</a>
+        {{range $index, $val := .Site.Taxonomies.tags.about}}
+        <div class="row">
+            <div class="col-md-6 col-sm-6" data-aos="fade-down" data-aos-duration="1000">
+                <h1>{{.Title}}</h1>
+                <p>{{.Summary}}</p>
+                <a href="{{ .RelPermalink }}" class="btn btn-info">Read more</a>
+            </div>
+            <div class="col-md-6 col-sm-6" data-aos="fade-up" data-aos-duration="1500">
+                <img src="{{.Page.Params.Image}}" alt="" class="img-fluid rounded-circle">
+            </div>
+        </div>
+        {{end}}
+        <hr size="3" noshade>
+    </div>
+</section>
+{{end}}
+{{define "projects"}}
+<section id="projects" class="py-5">
+    <div class="container">
+        <h1 class="text-center">Projects</h1>
+        <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="children" data-toggle="tab" href="#children-tab" role="tab"
+                    aria-controls="children" aria-selected="true">children</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="elder" data-toggle="tab" href="#elder-tab" role="tab" aria-controls="elder"
+                    aria-selected="false">Elderly care</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="environment" data-toggle="tab" href="#environment-tab" role="tab"
+                    aria-controls="environment" aria-selected="false">Environment</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="women" data-toggle="tab" href="#women-tab" role="tab" aria-controls="women"
+                    aria-selected="false">women</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="youth" data-toggle="tab" href="#youth-tab" role="tab" aria-controls="youth"
+                    aria-selected="false">Youth</a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="children-tab" role="tabpanel" aria-labelledby="children">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Every child has the right to good education and health. The future of a nation mainly
+                            depends on the Gross National Happiness which is proportionate to the growth and development
+                            of children.<br>Charitable Trust focusses on nurturing the personal and social life of
+                            children. The goal is to provide equal rights to every child without any social, economic
+                            and religious differences. RCT served more than 1500 children in and around the slums of
+                            Chennai.
+                        </h5>
+                        <a href="{{.Site.BaseURL}}children-development-projects/home/" class="btn btn-info">Read more</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/images/7-children.jpg" alt="health">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="elder-tab" role="tabpanel" aria-labelledby="elder">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>We feel that today’s generation has better compassion and respect for the elders, than their
+                            previous generation which witnessed a lot of financial and family hurdles forcing them to
+                            leave elders at old age homes or alone. If you take social media and cinema, youngsters
+                            share a lot of useful thoughts and messages about caring elders. We at RCT, has given old
+                            age homes, not just for accommodation and food, but also to enable to join with their
+                            families again, provide employment, healthcare and complete rehabilitation.</h5>
+                            <a href="{{.Site.BaseURL}}elderly-care-projects/home/" class="btn btn-info">Read more</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/images/17-elder.jpg" alt="elder">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="environment-tab" role="tabpanel" aria-labelledby="environment">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>RCT aims to create a clean and green environment. The projects are hygiene improvement,
+                            afforestation, Solid Waste Management, Say NO to plastics, building proper Sanitation
+                            facilities, etc. We work with government and NGOs create a litter-free and hygienic
+                            environment. The objective is to Reduce, Reuse and Recycle.</h5>
+                            <a href="{{.Site.BaseURL}}environmental-protection-projects/home/" class="btn btn-info">Read more</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/images/environment_28.jpg" alt="environment">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="women-tab" role="tabpanel" aria-labelledby="women">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Women empowerment projects encourage them to improve their livelihood. We have formed Self
+                            Help Groups (SHG) for women to be independent. Empowering women is everyone’s basic duty and
+                            we appeal to everyone who is reading this to take care of the women in your family and give
+                            your love, time, energy and financial freedom for them. When women in your family live
+                            happily, the society grows and so does a Nation.<br>Our trust supports women to live with
+                            dignity. We create awareness about the importance of education to them and their children.
+                            The SHG takes care of their financial need by training them with small business
+                            opportunities. LIC gives every woman their basic insurance needed to live peacefully.
+                        </h5>
+                        <a href="{{.Site.BaseURL}}women-empowerment-projects/home/" class="btn btn-info">Read more</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/images/women_8.jpg" alt="women">
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="youth-tab" role="tabpanel" aria-labelledby="youth">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5>Tapping the potentials of youth force is very crucial for the holistic development of the
+                            Nation. RCT works with the youth of the Nation who are in need of quality education, skills
+                            development, health, personality development, etc. The trust educates the youth for taking
+                            up major social and entrepreneurial roles in the society through carrier guidance and
+                            leadership training programs.<br>Our trust is dedicated to imparting moral values, ethics,
+                            skills, etc. so that they become socially responsible citizens. More than 2500 youths are
+                            benefited every year.</h5>
+                            <a href="{{.Site.BaseURL}}youth-development-projects/home/" class="btn btn-info">Read more</a>
+                    </div>
+                    <div class="col-md-6">
+                        <img class="img-fluid" src="/images/youth_4.jpg" alt="youth">
                     </div>
                 </div>
             </div>
@@ -53,90 +177,25 @@
     </div>
 </section>
 {{end}}
-{{define "projects"}}
-<section id="projects" class="feature_part">
+{{define "gallery"}}
+<section id="gallery" class="py-5">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-8">
-                <div class="section_tittle text-center">
-                    <h2>Our Projects</h2>
-                </div>
+        <h1 class="text-center">Gallery</h1>
+        <div class="masonry">
+            {{range $index, $val := .Site.Taxonomies.tags.gallery}}
+            <div class="masonry-item">
+                <a href="{{.Page.Params.Image}}">
+                    <div class="masonry-content">
+                        <img class="img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
+                        <h3 class="masonry-title">{{.Title}}</h3>
+                        <p class="masonry-description">{{.Summary}}</p>
+                    </div>
+                </a>
             </div>
-        </div>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-sm-6">
-                    <a href="#">
-                        <div class="single_feature">
-                            <div class="single_feature_part">
-                                <div class=" d-flex align-items-center">
-                                    <img src="/images/feature_1.svg" alt="">
-                                    <h4>Children Development Activities</h4>
-                                </div>
-                                <p>Empower the children in distress and difficult situation through Non-Formal
-                                    Education,
-                                    evening tuition centres and sports club.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-5 col-sm-6">
-                    <a href="#">
-                        <div class="single_feature">
-                            <div class="single_feature_part">
-                                <div class=" d-flex align-items-center">
-                                    <img src="/images/feature_2.svg" alt="">
-                                    <h4>Youth Development Activities</h4>
-                                </div>
-                                <p>Educate the youth for taking up the role of leadership in society through carrier
-                                    guidance and leadership training programmes.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-5 col-sm-6">
-                    <a href="#">
-                        <div class="single_feature">
-                            <div class="single_feature_part">
-                                <div class=" d-flex align-items-center">
-                                    <img src="/images/feature_3.svg" alt="">
-                                    <h4>Women Empowerment Programmes</h4>
-                                </div>
-                                <p>Facilitate the women to be empowered through the formation of self-help groups and
-                                    women's rights education and safety and entrepreneurial training.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-lg-5 col-sm-6">
-                    <a href="#">
-                        <div class="single_feature">
-                            <div class="single_feature_part">
-                                <div class=" d-flex align-items-center">
-                                    <img src="/images/feature_4.svg" alt="">
-                                    <h4>Environmental Development Activities</h4>
-                                </div>
-                                <p>Promoting community health and clean environment through solid waste management and
-                                    health-related programmes for ensuring healthy living.</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            {{end}}
         </div>
     </div>
 </section>
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-xl-8">
-            <div class="section_tittle text-center">
-                {{range $index, $val := .Site.Taxonomies.tags.projects}}
-                <a href="{{$val.Page.Permalink}}" class="btn btn-info btn2 mt-3">Read more</a>
-                {{end}}
-            </div>
-        </div>
-    </div>
-</div>
 {{end}}
 {{define "volunteer"}}
 <section id="volunteer" class="intro_video_bg parallax">
@@ -152,358 +211,10 @@
         </div>
     </div>
 </section>
-<!--::volunteers_part-->
-<section class="volunteers_part py-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-xl-8">
-                <div class="section_tittle text-center">
-                    <p>volunteers</p>
-                    <h2>Expert Volunteers</h2>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-6 col-lg-3">
-                <div class="single_blog_item">
-                    <div class="single_blog_img">
-                        <img src="/images/volunteers_1.png" alt="doctor">
-                        <div class="social_icon">
-                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#"> <i class="fab fa-instagram"></i> </a>
-                            <a href="#"> <i class="fab fa-skype"></i> </a>
-                        </div>
-                    </div>
-                    <div class="single_text">
-                        <div class="single_blog_text">
-                            <h3>David Phillips</h3>
-                            <p>Project Manager</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="single_blog_item">
-                    <div class="single_blog_img">
-                        <img src="/images/volunteers_2.png" alt="doctor">
-                        <div class="social_icon">
-                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#"> <i class="fab fa-instagram"></i> </a>
-                            <a href="#"> <i class="fab fa-skype"></i> </a>
-                        </div>
-                    </div>
-                    <div class="single_text">
-                        <div class="single_blog_text">
-                            <h3>Lindsa Rudolph</h3>
-                            <p>Field Supervisor</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="single_blog_item">
-                    <div class="single_blog_img">
-                        <img src="/images/volunteers_3.png" alt="doctor">
-                        <div class="social_icon">
-                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#"> <i class="fab fa-instagram"></i> </a>
-                            <a href="#"> <i class="fab fa-skype"></i> </a>
-                        </div>
-                    </div>
-                    <div class="single_text">
-                        <div class="single_blog_text">
-                            <h3>Samuel Gardner</h3>
-                            <p>Co Founder</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-3">
-                <div class="single_blog_item">
-                    <div class="single_blog_img">
-                        <img src="/images/volunteers_4.png" alt="doctor">
-                        <div class="social_icon">
-                            <a href="#"> <i class="fab fa-facebook"></i> </a>
-                            <a href="#"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#"> <i class="fab fa-instagram"></i> </a>
-                            <a href="#"> <i class="fab fa-skype"></i> </a>
-                        </div>
-                    </div>
-                    <div class="single_text">
-                        <div class="single_blog_text">
-                            <h3>Lindsa Rudolph</h3>
-                            <p>Field Supervisor</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 {{end}}
-{{define "about"}}
-<section id="about" class="be_part parallax">
-    <div class="container">
-        <div class="row justify-content-between align-items-center">
-            <div class="col-lg-6">
-                <div class="be_part_text">
-                    <h2>Vision</h2>
-                    <p>Vision of the Real Charitable Trust is to protect the human with all rights and human dignity
-                        through basic education and humanistic service to the orphan, children, youth, women and aged
-                        persons in difficult circumstances and in distress in rural and urban. Secondly focused on
-                        protecting the environment, our Mother earth through solid waste management programmes, guarding
-                        nature with the planting and controlling pollution by awareness programmes.</p>
-                    <a href="{{.Site.BaseURL}}about/home/" class="btn btn-info btn2">learn more</a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <img src="/images/Charity.jpg" alt="" class="be_img">
-</section>
-<!-- <section class="py-4">
-    <div class="container p-3">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Mission</h2>
-                    <ul>
-                            <li>Enhancing the people for sustainable development through community mobilization and organization  </li>
-                            <li>Empowering the children in distress and difficult situation through Non-Formal Education, evening tuition centres and sports club.</li>
-                            <li>Educate the youth for taking up the role of leadership in society through carrier guidance and leadership training programmes</li>
-                            <li>Facilitating women to be empowered through the formation of self-help groups and women's rights education and safety and entrepreneurial training. </li>
-                            <li>Promoting community health and cleanliness through solid waste management and health-related programmes for ensuring healthy living.</li>
-                        </ul>
-            </div>
-        </div>
-    </div>
-</section> -->
-{{end}}
-{{define "gallery"}}
-{{end}}
+
 {{define "strength"}}
 <section id="strength" class="py-5" style="background-color: rgba(128, 255, 0, 0.39)">
-    <div class="container mb-5">
-        <div class="row">
-            <div class="col-sm-12">
-                <div id="myCarousel" class="carousel slide" data-ride="carousel">
-                    <h2 class="text-center mb-5">Customer Testimonials</h2>
-                    <!-- Carousel indicators -->
-                    <ol class="carousel-indicators">
-                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#myCarousel" data-slide-to="1"></li>
-                        <li data-target="#myCarousel" data-slide-to="2"></li>
-                    </ol>
-                    <!-- Wrapper for carousel items -->
-                    <div class="carousel-inner">
-                        <div class="item carousel-item active">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                                            varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel,
-                                            semper malesuada ante.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/1.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Paula Wilson</b></div>
-                                                <div class="details">Media Analyst / SkyNet</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt.
-                                            Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat
-                                            faucibus quam.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/2.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Antonio Moreno</b></div>
-                                                <div class="details">Web Developer / SoftBee</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                                            varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel,
-                                            semper malesuada ante.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/3.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Michael Holz</b></div>
-                                                <div class="details">Web Developer / DevCorp</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt.
-                                            Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat
-                                            faucibus quam.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/4.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Mary Saveley</b></div>
-                                                <div class="details">Graphic Designer / MarsMedia</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item carousel-item">
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam eu sem tempor,
-                                            varius quam at, luctus dui. Mauris magna metus, dapibus nec turpis vel,
-                                            semper malesuada ante.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/5.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>Martin Sommer</b></div>
-                                                <div class="details">SEO Analyst / RealSearch</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-sm-6">
-                                    <div class="testimonial">
-                                        <p>Vestibulum quis quam ut magna consequat faucibu. Eget mi suscipit tincidunt.
-                                            Utmtc tempus dictum. Pellentesque virra. Quis quam ut magna consequat
-                                            faucibus quam.</p>
-                                    </div>
-                                    <div class="media">
-                                        <div class="media-left d-flex mr-3">
-                                            <img src="/examples/images/clients/6.jpg" alt="">
-                                        </div>
-                                        <div class="media-body">
-                                            <div class="overview">
-                                                <div class="name"><b>John Williams</b></div>
-                                                <div class="details">Web Designer / UniqueDesign</div>
-                                                <div class="star-rating">
-                                                    <ul class="list-inline">
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star"></i></li>
-                                                        <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Carousel controls -->
-                    <a class="carousel-control left carousel-control-prev" href="#myCarousel" data-slide="prev">
-                        <i class="fa fa-chevron-left"></i>
-                    </a>
-                    <a class="carousel-control right carousel-control-next" href="#myCarousel" data-slide="next">
-                        <i class="fa fa-chevron-right"></i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container">
-        <h2 class="text-center mb-5">Our Partners/ Our Clients</h2>
-        <section class="customer-logos slider">
-            <div class="slide"><img
-                    src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
-            <div class="slide"><img
-                    src="https://image.freepik.com/free-vector/luxury-letter-e-logo-design_1017-8903.jpg"></div>
-            <div class="slide"><img src="https://image.freepik.com/free-vector/3d-box-logo_1103-876.jpg"></div>
-            <div class="slide"><img src="https://image.freepik.com/free-vector/blue-tech-logo_1103-822.jpg"></div>
-            <div class="slide"><img
-                    src="https://image.freepik.com/free-vector/colors-curl-logo-template_23-2147536125.jpg"></div>
-            <div class="slide"><img src="https://image.freepik.com/free-vector/abstract-cross-logo_23-2147536124.jpg">
-            </div>
-            <div class="slide"><img src="https://image.freepik.com/free-vector/football-logo-background_1195-244.jpg">
-            </div>
-            <div class="slide"><img
-                    src="https://image.freepik.com/free-vector/background-of-spots-halftone_1035-3847.jpg"></div>
-            <div class="slide"><img
-                    src="https://image.freepik.com/free-vector/retro-label-on-rustic-background_82147503374.jpg"></div>
-        </section>
-    </div>
 </section>
 {{end}}
 {{define "donate"}}

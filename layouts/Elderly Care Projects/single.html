@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+{{partial "head" .}}
+<body>
+    {{partial "header-single" .}}
+    <section class="elder-intro parallax">
+        <div class="parallax-overlay">
+            <div class="container">
+                {{range $index, $val := .Site.Taxonomies.tags.elder}}
+                <h1 class="text-center pb-3">{{.Title}}</h1>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    </section>
+    <section id="children" class="py-5">
+        <div class="container">
+            {{range $index, $val := .Site.Taxonomies.tags.elder}}
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    
+                    {{.Content}}
+               
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </section>
+    <div class="container">
+        <h1 class="text-center mb-5">Gallery</h1>
+        <div class="masonry">
+            {{range $index, $val := .Site.Taxonomies.tags.eldergal}}
+            <div class="masonry-item">
+                <a href="{{.Page.Params.Image}}"data-fancybox="gallery" aria-label="RCT Gallery">
+                    <div class="masonry-content">
+                        <img class="img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
+                    </div>
+                </a>
+            </div>
+            {{end}}
+        </div>
+    </div>
+    {{partial "footer" .}}
+    {{partial "scripts" .}}
+</body>
+</html>

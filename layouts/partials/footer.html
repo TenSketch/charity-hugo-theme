@@ -1,82 +1,94 @@
 <footer id="footer" class="footer-area">
-        <div class="container">
-            <div class="row justify-content-between">
-                
-                <div class="col-sm-6 col-md-3 col-xl-3">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Links</h4>
-                        <ul class="list-unstyled">
-                            <li><a href="{{.Site.BaseURL}}projects/home/">Projects</a></li>
-                            <li><a href="#volunteer">Volunteer</a></li>
-                            <li><a href="{{.Site.BaseURL}}about/home/">About</a></li>
-                            <li><a href="#testimonials">Testimonials</a></li>
-                            <li><a href="#donate">Donate</a></li>
-                            <li><a href="{{.Site.BaseURL}}governance/legal/">Governance</a></li>
-                            <li><a href="#donate">Privacy policy</a></li>
-                            <li><a href="#donate">Terms and conditions</a></li>
-
-                        </ul>
-                        
+    <div class="container">
+        <div class="row justify-content-between">
+            <div class="col-sm-6 col-md-3 col-xl-3">
+                <div class="single-footer-widget footer_2">
+                    <h2>Links</h2>
+                    <ul class="list-unstyled">
+                        <li><a href="{{.Site.BaseURL}}about/home/">About</a></li>
+                        <li><a href="{{.Site.BaseURL}}legal/home">Legal</a></li>
+                        <!-- <li><a href="#">Privacy policy</a></li>
+                            <li><a href="#">Terms and conditions</a></li> -->
+                    </ul>
+                    <h4>Projects</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="{{.Site.BaseURL}}children-development-projects/home/">Children Development</a></li>
+                        <li><a href="{{.Site.BaseURL}}elderly-care-projects/home/">Elderly care</a></li>
+                        <li><a href="{{.Site.BaseURL}}environmental-protection-projects/home">Environmental
+                                Protection</a></li>
+                        <li><a href="{{.Site.BaseURL}}women-empowerment-projects/home/">Women Empowerment</a></li>
+                        <li><a href="{{.Site.BaseURL}}youth-development-projects/home/">Youth Development</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 col-md-3">
+                <div class="single-footer-widget footer_2">
+                    <h4>Contact us</h4>
+                    <p>Real Charitable Trust<br># 297, 4th Street,<br>Damodaran Nagar, Vyasarpadi,<br>Chennai - 600 039
+                    </p>
+                    <div class="contact_info">
+                        <p><i class="fa fa-mobile"></i><a href="tel:+9710394002">+91-97103 94002</a> ,
+                            <a href="tel:+7010413939">+91-7010413939</a></p>
+                        <p><i class="fa fa-envelope"></i><a href="mailto:realcharitabletrust07@gmail.com"
+                                target="_top">realcharitabletrust07@gmail.com</a></p>
                     </div>
                 </div>
-                <div class="col-xl-3 col-sm-6 col-md-3">
-                    <div class="single-footer-widget footer_2">
-                        <h4>Contact us</h4>
-                        <p>Real Charitable Trust<br># 297, 4th Street,<br>Damodaran Nagar, Vyasarpadi,<br>Chennai - 600 039
-                                </p>
-                        <div class="contact_info">
-                            <p><i class="fas fa-mobile"></i>&nbsp;<a href="tel:+9710394002">+91-97103 94002</a></p>
-                            <p><i class="fas fa-envelope-square"></i>&nbsp;<a href="mailto:realcharitabletrust07@gmail.com" target="_top">realcharitabletrust07@gmail.com</a></p>
-                            
+                <div class="social_icon">
+                    <a href="https://www.facebook.com/Rct-Real-Charitable-Trust-2101107163546467/?ref=br_rs"
+                        target="_blank" rel="noopener"> <i class="fa fa-facebook"></i> </a>
+                    <!-- <a href="#" target="_blank" rel="noopener"> <i class="fa fa-twitter"></i> </a>
+                            <a href="#" target="_blank" rel="noopener"> <i class="fa fa-instagram"></i> </a> -->
+                    <!-- <a href="#" target="_blank" rel="noopener"> <i class="fa fa-skype"></i> </a> -->
+                </div>
+            </div>
+            <div class="col-sm-6 col-md-6 col-xl-6">
+                <div class="single-footer-widget footer_1">
+                    <h4>Write to us</h4>
+                    <form name="contact" method="POST" data-netlify="true" data-netlify-recaptcha="true"
+                    action="/thank-you">
+                    <div class="form-group">
+                        <label style="text-align:left" for="name">Name</label>
+                        <input type="text" class="form-control" name="Name" placeholder="Enter your name" aria-label="Name"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="contact">Contact #</label>
+                        <input type="tel" class="form-control" name="Contact #"
+                        placeholder="your 10 digit mobile no." aria-label="contact_no" minlength="10" maxlength="10"
+                        autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" name="Email id" placeholder="abc@somemail.com" aria-label="e_mail_address" autocomplete="off" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" name="Message" placeholder="Enter your message" rows="3"
+                            aria-label="message" spellcheck="false" required></textarea>
+                    </div>
+                    <div data-netlify-recaptcha="true" class="recaptcha"></div>
+                    <input type="submit" class="btn btn-info" value="Submit" aria-label="Submit button">
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="copyright_part_text text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p class="footer-text m-0">
+                                Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | Made
+                                with&nbsp;<i class="fa fa-heart" aria-hidden="true"></i> by <a
+                                    href="https://www.tensketch.com/" target="_blank" rel="noopener">TenSketch</a>
+                            </p>
                         </div>
-                    </div>
-                    <div class="social_icon">
-                            <a href="https://www.facebook.com/Rct-Real-Charitable-Trust-2101107163546467/?ref=br_rs" target="_blank" rel="noopener"> <i class="fab fa-facebook"></i> </a>
-                            <!-- <a href="#" target="_blank" rel="noopener"> <i class="fab fa-twitter"></i> </a>
-                            <a href="#" target="_blank" rel="noopener"> <i class="fab fa-instagram"></i> </a> -->
-                            <!-- <a href="#" target="_blank" rel="noopener"> <i class="fab fa-skype"></i> </a> -->
-                    </div>
-                </div>
-                <div class="col-sm-6 col-md-6 col-xl-6">
-                    <div class="single-footer-widget footer_1">
-                            <h4>Write to us</h4>
-                            <form name="Contact" method="POST" data-netlify="true" data-netlify-recaptcha="true">
-                            <div class="form-group">
-                                <label for="name">Text</label>
-                                <input id="name" class="form-control" type="text" name="Name" placeholder="enter ur name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="phone-no">Contact #</label>
-                                <input id="phone-no" class="form-control" type="tel" name="Contact #" placeholder="enter your mobile no."required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email #</label>
-                                <input id="email" class="form-control" type="email" name="Email #" placeholder="abc@mail.com"required>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message</label>
-                                <textarea id="message" class="form-control" name="Message" rows="2" placeholder="Enquiry or message"required></textarea>
-                            </div>
-                            <div data-netlify-recaptcha="true" class="recaptcha"></div>
-                            <input type="submit" class="btn btn-info" value="Submit" aria-label="Submit button">
-                        </form>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="copyright_part_text text-center">
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <p class="footer-text m-0">
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Made with&nbsp;<i class="fa fa-heart" aria-hidden="true"></i> by <a href="https://www.tensketch.com/" target="_blank" rel="noopener">TenSketch</a>
-</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    </div>
+</footer>

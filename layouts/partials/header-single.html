@@ -1,31 +1,41 @@
-<nav class="navbar navbar-dark fixed-top navbar-expand-sm">
-    <a href="{{.Site.BaseURL}}" class="navbar-brand"><img src="/images/logo.png" alt="logo"></a>
+<nav class="navbar navbar-dark bg-nav fixed-top navbar-expand-lg px-5">
+    <a href="{{.Site.BaseURL}}" class="navbar-brand">Real Charitable Trust</a>
     <button class="navbar-toggler" data-target="#my-nav" data-toggle="collapse" aria-controls="my-nav"
         aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div id="my-nav" class="collapse navbar-collapse">
-        <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-                <a class="nav-link" href="{{.Site.BaseURL}}projects/home/">Projects</a>
+        <ul class="navbar-nav ml-auto">
+            <!-- <li class="nav-item dropdown dmenu">
+                <a class="nav-link" href="{{.Site.BaseURL}}#services">projects</a>
+            </li> -->
+            <li class="nav-item dropdown dmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Projects</a>
+                <div class="dropdown-menu sm-menu">
+                    <a class="dropdown-item" href="{{.Site.BaseURL}}children-development-projects/home/">Children Development</a>
+                    <a class="dropdown-item" href="{{.Site.BaseURL}}elderly-care-projects/home/">Elderly care</a>
+                    <a class="dropdown-item" href="{{.Site.BaseURL}}environmental-protection-projects/home">Environmental Protection</a>
+                    <a class="dropdown-item" href="{{.Site.BaseURL}}women-empowerment-projects/home/">Women Empowerment</a>
+                    <a class="dropdown-item" href="{{.Site.BaseURL}}youth-development-projects/home/">Youth Development</a>
+                </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{.Site.BaseURL}}#volunteer">Volunteer</a>
-            </li>
-            <li class="nav-item">
             <li class="nav-item">
                 <a class="nav-link" href="{{.Site.BaseURL}}about/home/">About</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{.Site.BaseURL}}#strength">Our Strength</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{.Site.BaseURL}}donate/home">Donate</a>
-            </li>
+            <!-- <li class="nav-item dropdown dmenu">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Support</a>
+                <div class="dropdown-menu sm-menu">
+                    <a class="dropdown-item" href="#">Donate</a>
+                    <a class="dropdown-item" href="#">Volunteer</a>
+                    <a class="dropdown-item" href="#">Partner</a>
+                </div>
+            </li> -->
             <li class="nav-item">
                 <a class="nav-link" href="#footer">Contact</a>
             </li>
-            <a class="btn btn-info btn1" href="#join">Join us</a>
+            <li class="nav-item">
+                <a class="nav-link" href="tel:+918015480324" aria-label="Esma Events contact number"><i
+                        class="fa fa-mobile" aria-hidden="true"></i> 91-8015480324</a>
             </li>
         </ul>
     </div>

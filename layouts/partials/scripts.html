@@ -1,24 +1,9 @@
 <script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
 <script src="/js/bootstrap.min.js" type="text/javascript"></script>
 
-
-
-<!-- navbar shrink on scroll -->
+<!-- aos animate on scroll -->
+<script src="/js/aos.js" type="text/javascript"></script>
 <script>
-    $(window).scroll(function() {
-  if ($(document).scrollTop() > 100) {
-    $('.navbar').addClass('affix');
-  } else {
-    $('.navbar').removeClass('affix');
-  }
-});
+  AOS.init();
 </script>
-<script>
-    $(window).scroll(function() {
-  if ($(document).scrollTop() > 100) {
-    $('.navbar').addClass('animated fadeInDown');
-  } else {
-    $('.navbar').removeClass('animated fadeInDown');
-  }
-});
-</script> 
+<script src="/js/jquery.fancybox.min.js" type="text/javascript"></script>
