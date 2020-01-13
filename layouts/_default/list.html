@@ -178,13 +178,13 @@
 </section>
 {{end}}
 {{define "gallery"}}
-<section id="gallery" class="py-5">
+<section id="gallery1" class="py-5">
     <div class="container">
         <h1 class="text-center">Gallery</h1>
         <div class="masonry">
             {{range $index, $val := .Site.Taxonomies.tags.gallery}}
             <div class="masonry-item">
-                <a href="{{.Page.Params.Image}}">
+                <a href="{{.Page.Params.Image}}" data-fancybox="gallery" aria-label="RCT Gallery">
                     <div class="masonry-content">
                         <img class="img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
                         <h3 class="masonry-title">{{.Title}}</h3>
