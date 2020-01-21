@@ -3,23 +3,24 @@
 {{partial "head" .}}
 <body>
     {{partial "header-single" .}}
-    <section id="about" class="py-5 mt-5">
-            
-                <div class="container">
-                        <h1 class="text-center">{{.Title}}</h1>
-                    <div class="row justify-content-center">
-                        <div class="col-md-8">
-                            
-                                {{.Content}}
-                            
-                        </div>
-                    </div>
-                
+    <section class="about-intro parallax">
+        <div class="overlay">
+            <div class="container">
+                {{range $index, $val := .Site.Taxonomies.tags.about}}
+                <h1 class="text-center pb-3">{{.Title}}</h1>
+                {{end}}
             </div>
-        </section>
-
-
-
+        </div>
+    </section>
+    <section id="about" class="mt-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    {{.Content}}
+                </div>
+            </div>
+        </div>
+    </section>
     {{partial "footer" .}}
     {{partial "scripts" .}}
 </body>

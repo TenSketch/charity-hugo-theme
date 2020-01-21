@@ -6,6 +6,66 @@
         transition: transform 10s ease,
             -webkit-transform 10s ease;
     }
+    /* carousel */
+    .carousel-caption {
+        bottom: 45% !important;
+    }
+    .carousel-caption h3 {
+        line-height: 2.5rem;
+    }
+    .carousel-item .img-fluid {
+        width: 100%;
+        height: 100%;
+    }
+    .carousel-caption h1 {
+        text-transform: uppercase;
+    }
+    .carousel-item::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #0e125c38;
+    }
+    @media (min-width: 768px) and (max-width:1024px) {
+        .carousel-caption {
+            bottom: 30% !important
+        }
+    }
+    @media (max-width: 768px) {
+        .carousel-caption {
+            bottom: 15% !important;
+        }
+        .carousel-caption h1 {
+            font-size: 2rem;
+        }
+        .carousel-caption h3 {
+            font-size: 1.5rem;
+            line-height: 2rem;
+        }
+    }
+    /* Small devices (landscape phones, 576px and up) */
+    @media (max-width: 576px) {
+        .carousel-item::after {
+            opacity: 0;
+        }
+        .carousel-caption {
+            bottom: 5% !important;
+        }
+        .carousel-caption h1 {
+            font-size: 1.5rem !important;
+        }
+        .carousel-caption h3 {
+            font-size: 1rem !important;
+            line-height: 1.5rem !important;
+        }
+    }
+    .carousel-caption h1 {
+        color: #fff
+    }
 </style>
 <div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="10000">
     <ol class="carousel-indicators d-none d-md-inline-flex">
@@ -16,14 +76,16 @@
     <div class="carousel-inner carousel-fade">
         {{range $index, $val := .Site.Taxonomies.tags.slider}}
         {{if (eq $index 0)}}
-        <div class="carousel-item drk active">
+        <div class="carousel-item active">
             {{ else }}
-            <div class="carousel-item drk">
+            <div class="carousel-item">
                 {{ end }}
-                <img class="d-block img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
-                <div class="carousel-caption d-md-block">
-                    <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1 c>
-                    <h3 class="animated fadeInUp slow delay-2s">{{.Summary}}</h3 class="animated fadeInDown slow">
+                <div class="d-flex align-items-center justify-content-center bg-rct min-vh-100">
+                    <img class="d-block img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
+                    <div class="carousel-caption d-md-block">
+                        <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1 c>
+                        <h3 class="animated fadeInUp slow delay-2s">{{.Summary}}</h3 class="animated fadeInDown slow">
+                    </div>
                 </div>
             </div>
             {{ end }}
@@ -100,7 +162,8 @@
                             and religious differences. RCT served more than 1500 children in and around the slums of
                             Chennai.
                         </h5>
-                        <a href="{{.Site.BaseURL}}children-development-projects/home/" class="btn btn-info">Read more</a>
+                        <a href="{{.Site.BaseURL}}children-development-projects/home/" class="btn btn-info">Read
+                            more</a>
                     </div>
                     <div class="col-md-6">
                         <img class="img-fluid" src="/images/7-children.jpg" alt="health">
@@ -116,7 +179,7 @@
                             share a lot of useful thoughts and messages about caring elders. We at RCT, has given old
                             age homes, not just for accommodation and food, but also to enable to join with their
                             families again, provide employment, healthcare and complete rehabilitation.</h5>
-                            <a href="{{.Site.BaseURL}}elderly-care-projects/home/" class="btn btn-info">Read more</a>
+                        <a href="{{.Site.BaseURL}}elderly-care-projects/home/" class="btn btn-info">Read more</a>
                     </div>
                     <div class="col-md-6">
                         <img class="img-fluid" src="/images/17-elder.jpg" alt="elder">
@@ -130,7 +193,8 @@
                             afforestation, Solid Waste Management, Say NO to plastics, building proper Sanitation
                             facilities, etc. We work with government and NGOs create a litter-free and hygienic
                             environment. The objective is to Reduce, Reuse and Recycle.</h5>
-                            <a href="{{.Site.BaseURL}}environmental-protection-projects/home/" class="btn btn-info">Read more</a>
+                        <a href="{{.Site.BaseURL}}environmental-protection-projects/home/" class="btn btn-info">Read
+                            more</a>
                     </div>
                     <div class="col-md-6">
                         <img class="img-fluid" src="/images/environment_28.jpg" alt="environment">
@@ -166,7 +230,7 @@
                             leadership training programs.<br>Our trust is dedicated to imparting moral values, ethics,
                             skills, etc. so that they become socially responsible citizens. More than 2500 youths are
                             benefited every year.</h5>
-                            <a href="{{.Site.BaseURL}}youth-development-projects/home/" class="btn btn-info">Read more</a>
+                        <a href="{{.Site.BaseURL}}youth-development-projects/home/" class="btn btn-info">Read more</a>
                     </div>
                     <div class="col-md-6">
                         <img class="img-fluid" src="/images/youth_4.jpg" alt="youth">
@@ -212,7 +276,6 @@
     </div>
 </section>
 {{end}}
-
 {{define "strength"}}
 <section id="strength" class="py-5" style="background-color: rgba(128, 255, 0, 0.39)">
 </section>

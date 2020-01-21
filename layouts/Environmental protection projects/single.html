@@ -4,7 +4,7 @@
 <body>
     {{partial "header-single" .}}
     <section class="envion-intro parallax">
-        <div class="parallax-overlay pb-5">
+        <div class="overlay pb-5">
             <div class="container">
                 {{range $index, $val := .Site.Taxonomies.tags.environment}}
                 <h1 class="text-center">{{.Title}}</h1>
@@ -18,9 +18,7 @@
             {{range $index, $val := .Site.Taxonomies.tags.environment}}
             <div class="row">
                 <div class="col-md-8 mx-auto">
-                    
                     {{.Content}}
-               
                 </div>
             </div>
             {{end}}
@@ -28,7 +26,6 @@
     </section>
     <div class="container">
         <h1 class="text-center mb-5">Gallery</h1>
-
         <div class="masonry">
             {{range $index, $val := .Site.Taxonomies.tags.environmentgal}}
             <div class="masonry-item">

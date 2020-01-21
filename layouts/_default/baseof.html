@@ -1,44 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {{partial "head" .}}
+  {{partial "head" .}}
 </head>
 <body>
-    {{partial "header" .}}
-    {{block "carousel".}}
-    {{end}}
-    {{block "about".}}
-    {{end}}
-    {{block "projects".}}
-    {{end}}
-    {{block "gallery".}}
-    {{end}}
-    <!-- {{block "donate".}}
-    {{end}} -->
-    {{partial "footer" .}}
-    {{partial "scripts" .}}
-    <!-- navbar -->
-<script>
-    // toggle bg color on transparant nav for collapse
-    $(".navbar-toggler").click(function () {
-      $("nav").toggleClass("bg-rct");
-    })
-    // navbar change bg and shrink on scroll
-    $(window).scroll(function () {
-      if ($(document).scrollTop() > 100) {
-        $('.navbar').addClass('affix');
-      } else {
-        $('.navbar').removeClass('affix');
-      }
-    });
-  // navbar animated on scroll
-    $(window).scroll(function () {
-      if ($(document).scrollTop() > 100) {
-        $('.navbar').addClass('animated fadeInDown');
-      } else {
-        $('.navbar').removeClass('animated fadeInDown');
-      }
-    });
-  </script>
+  {{partial "header" .}}
+  {{block "carousel".}}
+  {{end}}
+  {{block "about".}}
+  {{end}}
+  {{block "projects".}}
+  {{end}}
+  {{block "gallery".}}
+  {{end}}
+  {{partial "footer" .}}
+  {{partial "scripts" .}}
 </body>
 </html>

@@ -1,9 +1,44 @@
-<script src="/js/jquery-3.3.1.min.js" type="text/javascript"></script>
-<script src="/js/bootstrap.min.js" type="text/javascript"></script>
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script>
+  // navbar change bg and shrink on scroll and animated on scroll
+  $(window).scroll(function () {
+    if ($(document).scrollTop() > 100) {
+      $('.navbar').addClass('affix animated fadeInDown');
+    } else {
+      $('.navbar').removeClass('affix animated fadeInDown');
+    }
+  });
+  // toggle bg color on transparant nav for collapse
+  $(".navbar-toggler").click(function () {
+    $("nav").toggleClass("bg-rct");
+  })
+  $(".navbar-nav li a:not('.dropdown-toggle')").on('click', function () {
+    $('.navbar-collapse').collapse('hide');
+  });
+</script>
 <!-- aos animate on scroll -->
-<script src="/js/aos.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script>
   AOS.init();
 </script>
-<script src="/js/jquery.fancybox.min.js" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+<!-- Scroll to top when arrow up clicked BEGIN -->
+<a id="back2Top" title="Back to top" href="#">&#10148;</a>
+<script>
+  $(window).scroll(function () {
+    var height = $(window).scrollTop();
+    if (height > 100) {
+      $('#back2Top').fadeIn();
+    } else {
+      $('#back2Top').fadeOut();
+    }
+  });
+  $(document).ready(function () {
+    $("#back2Top").click(function (event) {
+      event.preventDefault();
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
+    });
+  });
+</script>
