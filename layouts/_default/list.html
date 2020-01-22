@@ -49,18 +49,19 @@
     }
     /* Small devices (landscape phones, 576px and up) */
     @media (max-width: 576px) {
-        .carousel-item::after {
-            opacity: 0;
-        }
+     
         .carousel-caption {
             bottom: 5% !important;
+            background-color:#0e125c56;
+            border-radius: 5px;
         }
         .carousel-caption h1 {
             font-size: 1.5rem !important;
+            text-transform: initial;
         }
         .carousel-caption h3 {
             font-size: 1rem !important;
-            line-height: 1.5rem !important;
+            line-height: 1.3rem !important;
         }
     }
     .carousel-caption h1 {
@@ -252,7 +253,7 @@
                     <div class="masonry-content">
                         <img class="img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
                         <h3 class="masonry-title">{{.Title}}</h3>
-                        <p class="masonry-description">{{.Summary}}</p>
+                        <!-- <p class="masonry-description">{{.Summary}}</p> -->
                     </div>
                 </a>
             </div>
