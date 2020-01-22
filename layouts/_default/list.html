@@ -6,20 +6,25 @@
         transition: transform 10s ease,
             -webkit-transform 10s ease;
     }
+
     /* carousel */
     .carousel-caption {
         bottom: 45% !important;
     }
+
     .carousel-caption h3 {
         line-height: 2.5rem;
     }
+
     .carousel-item .img-fluid {
         width: 100%;
         height: 100%;
     }
+
     .carousel-caption h1 {
         text-transform: uppercase;
     }
+
     .carousel-item::after {
         content: "";
         display: block;
@@ -28,42 +33,61 @@
         bottom: 0;
         left: 0;
         right: 0;
-        background: #0e125c38;
+        background: #0e125c;
+        opacity: 0.4;
     }
+
+    @media(max-width:991px) {
+        .bg-carousel {
+            background-color: rgba(14, 28, 92, 0.842);
+        }
+    }
+
     @media (min-width: 768px) and (max-width:1024px) {
         .carousel-caption {
             bottom: 30% !important
         }
     }
+
     @media (max-width: 768px) {
         .carousel-caption {
             bottom: 15% !important;
         }
+
         .carousel-caption h1 {
             font-size: 2rem;
         }
+
         .carousel-caption h3 {
             font-size: 1.5rem;
             line-height: 2rem;
         }
     }
+
     /* Small devices (landscape phones, 576px and up) */
     @media (max-width: 576px) {
-     
+        .carousel-item::after {
+        opacity: 0;
+    }
+
         .carousel-caption {
             bottom: 5% !important;
-            background-color:#0e125c56;
+            background-color: #0e125c56;
             border-radius: 5px;
         }
+
         .carousel-caption h1 {
             font-size: 1.5rem !important;
             text-transform: initial;
         }
+
         .carousel-caption h3 {
             font-size: 1rem !important;
             line-height: 1.3rem !important;
         }
+
     }
+
     .carousel-caption h1 {
         color: #fff
     }
@@ -81,7 +105,7 @@
             {{ else }}
             <div class="carousel-item">
                 {{ end }}
-                <div class="d-flex align-items-center justify-content-center bg-rct min-vh-100">
+                <div class="d-flex align-items-center justify-content-center bg-carousel min-vh-100">
                     <img class="d-block img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
                     <div class="carousel-caption d-md-block">
                         <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1 c>

@@ -84,9 +84,7 @@ a {
 a:hover {
   text-decoration: none;
 }
-.bg-rct {
-  background-color: rgba(14, 28, 92, 0.842);
-}
+
 .tab-content h5 {
   margin-top: 2rem;
   text-align: justify;
