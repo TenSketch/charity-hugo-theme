@@ -25,6 +25,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
 <!-- Scroll to top when arrow up clicked BEGIN -->
 <a id="back2Top" title="Back to top" href="#">&#10148;</a>
+<div id="title">&nbsp;</div> 
 <script>
   $(window).scroll(function () {
     var height = $(window).scrollTop();
@@ -41,4 +42,11 @@
       return false;
     });
   });
+</script>
+<!-- tooltip title -->
+<script>
+$('#link').hover(function(){
+    $('#title').text($('#link').attr('title'));
+});
+
 </script>
