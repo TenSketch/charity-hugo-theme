@@ -5,12 +5,11 @@ body {
   width: 100%;
   height: 100%;
   font-family: "Inria Serif", serif;
-  color: #000;
+  color: #414141;
 }
 html,
 body {
   scroll-behavior: smooth;
-  
 }
 .navbar {
   -webkit-transition: padding 0.2s ease;
@@ -21,10 +20,7 @@ body {
   z-index: 999;
 }
 .navbar-brand {
-  /* font-size: 2rem; */
-  /* font-weight: 600; */
   text-transform: uppercase;
-  /* line-height: 2rem; */
 }
 .navbar-nav .nav-link {
   display: inline-block;
@@ -63,14 +59,14 @@ li {
   .navbar-brand {
     font-size: 1rem;
   }
-  .navbar-collapse{
+  .navbar-collapse {
     background-color: #0e1c5c;
   }
-  .btn-info{
+  .btn-info {
     margin-bottom: 1rem;
   }
   #contact {
-    padding: 5rem 0rem 2rem!important
+    padding: 5rem 0 2rem !important;
   }
 }
 h1,
@@ -78,8 +74,6 @@ h2 {
   font-weight: 600;
 }
 p {
-  line-height: 1..2rem;
-  margin-bottom: 5px;
   text-align: justify;
 }
 a {
@@ -93,11 +87,9 @@ a {
 a:hover {
   text-decoration: none;
 }
-
 .tab-content h5 {
   margin-top: 2rem;
   text-align: justify;
-  
 }
 .nav-link {
   font-size: 1.2rem;
@@ -162,10 +154,9 @@ a:hover {
   overflow: hidden;
 }
 .masonry-item {
-  color: #ffffff;
+  color: #fff;
   background-color: #0e125c;
 }
-
 .masonry-title,
 .masonry-description {
   margin: 0;
@@ -303,7 +294,7 @@ a:hover {
   .social {
     display: inline-block;
   }
-  .navbar-nav{
+  .navbar-nav {
     text-align: right;
   }
 }
@@ -333,11 +324,10 @@ address {
 .bottom-footer {
   background-color: #0e125c;
   color: #fff;
-  font-size: 1rem;
   height: 20vh;
 }
 .bottom-footer p {
-  text-align: center;
+  margin-bottom: 5px;
 }
 .bottom-footer a {
   color: #78c0e0;

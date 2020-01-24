@@ -9,10 +9,7 @@
       $('.navbar').removeClass('affix animated fadeInDown');
     }
   });
-  // toggle bg color on transparant nav for collapse
-  $(".navbar-toggler").click(function () {
-    $("nav").toggleClass("bg-rct");
-  })
+//hide navbar after click
   $(".navbar-nav li a:not('.dropdown-toggle')").on('click', function () {
     $('.navbar-collapse').collapse('hide');
   });
@@ -23,7 +20,7 @@
   AOS.init();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-<!-- Scroll to top when arrow up clicked BEGIN --> 
+<!-- Scroll to top--> 
 <script>
   $(window).scroll(function () {
     var height = $(window).scrollTop();
@@ -47,5 +44,4 @@
 $('#link').hover(function(){
     $('#title').text($('#link').attr('title'));
 });
-
 </script>
