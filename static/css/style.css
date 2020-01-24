@@ -10,7 +10,7 @@ body {
 html,
 body {
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  
 }
 .navbar {
   -webkit-transition: padding 0.2s ease;
@@ -63,13 +63,22 @@ li {
   .navbar-brand {
     font-size: 1rem;
   }
+  .navbar-collapse{
+    background-color: #0e1c5c;
+  }
+  .btn-info{
+    margin-bottom: 1rem;
+  }
+  #contact {
+    padding: 5rem 0rem 2rem!important
+  }
 }
 h1,
 h2 {
   font-weight: 600;
 }
 p {
-  line-height: 1.929;
+  line-height: 1..2rem;
   margin-bottom: 5px;
   text-align: justify;
 }
@@ -88,10 +97,10 @@ a:hover {
 .tab-content h5 {
   margin-top: 2rem;
   text-align: justify;
-  line-height: 2rem;
+  
 }
 .nav-link {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .nav-item {
   display: inline;
@@ -294,6 +303,9 @@ a:hover {
   .social {
     display: inline-block;
   }
+  .navbar-nav{
+    text-align: right;
+  }
 }
 #contact {
   background-color: #78c0e0;
@@ -315,9 +327,6 @@ address {
   outline: 0;
   box-shadow: 0 1px 5px 1px #fff;
 }
-.fa {
-  font-size: 1.5rem !important;
-}
 .fa-heart {
   margin-right: 0;
 }
@@ -329,9 +338,6 @@ address {
 }
 .bottom-footer p {
   text-align: center;
-}
-.bottom-footer .fa {
-  font-size: 1rem !important;
 }
 .bottom-footer a {
   color: #78c0e0;

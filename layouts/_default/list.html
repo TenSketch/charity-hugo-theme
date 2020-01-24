@@ -1,13 +1,17 @@
 {{ define "carousel" }}
 <style>
-    .carousel-fade .carousel-inner .carousel-item {
-        transition: -webkit-transform 10s ease;
-        transition: transform 10s ease;
-        transition: transform 10s ease,
-            -webkit-transform 10s ease;
-    }
-
     /* carousel */
+     .carousel-item::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgb(29, 29, 29);
+        opacity: 0.5;
+    }
     .carousel-caption {
         bottom: 45% !important;
     }
@@ -21,25 +25,9 @@
         height: 100%;
     }
 
-    .carousel-caption h1 {
-        text-transform: uppercase;
-    }
-
-    .carousel-item::after {
-        content: "";
-        display: block;
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: #0e125c;
-        opacity: 0.4;
-    }
-
     @media(max-width:991px) {
         .bg-carousel {
-            background-color: rgba(14, 28, 92, 0.842);
+            background-color: #0e1c5c
         }
     }
 
@@ -63,8 +51,6 @@
             line-height: 2rem;
         }
     }
-
-    /* Small devices (landscape phones, 576px and up) */
     @media (max-width: 576px) {
         .carousel-item::after {
         opacity: 0;
@@ -72,14 +58,15 @@
 
         .carousel-caption {
             bottom: 5% !important;
-            background-color: #0e125c56;
+            /* background-color: #0e125c56;
             border-radius: 5px;
-            padding: 20px 10px;
+            padding: 20px 10px; */
         }
 
         .carousel-caption h1 {
             font-size: 1.5rem !important;
             text-transform: initial;
+            bottom: 20% !important;
         }
 
         .carousel-caption h3 {
@@ -93,7 +80,7 @@
         color: #fff
     }
 </style>
-<div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="10000">
+<div id="carouselId" class="carousel slide" data-ride="carousel" data-interval="5000">
     <ol class="carousel-indicators d-none d-md-inline-flex">
         {{range $index, $val := .Site.Taxonomies.tags.slider}}
         <li data-target="#carouselId" data-slide-to="{{$index}}"></li>
@@ -109,7 +96,7 @@
                 <div class="d-flex align-items-center justify-content-center bg-carousel min-vh-100">
                     <img class="d-block img-fluid" src="{{.Page.Params.Image}}" alt="{{.Title}}">
                     <div class="carousel-caption d-md-block">
-                        <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1 c>
+                        <h1 class="animated fadeInDown slow">{{.Page.Title }}</h1>
                         <h3 class="animated fadeInUp slow delay-2s">{{.Summary}}</h3 class="animated fadeInDown slow">
                     </div>
                 </div>
@@ -126,11 +113,6 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<script>
-    $(document).ready(function () {
-        jQuery.fn.carousel.Constructor.TRANSITION_DURATION = 10000  // 10 seconds
-    })
-</script>
 {{end}}
 {{define "about"}}
 <section id="about" class="py-5 mt-5">
@@ -138,12 +120,12 @@
         {{range $index, $val := .Site.Taxonomies.tags.about}}
         <div class="row">
             <div class="col-md-6 col-sm-6" data-aos="fade-down" data-aos-duration="1000">
-                <h1>{{.Title}}</h1>
+                <h2>{{.Title}}</h2>
                 <p>{{.Summary}}</p>
                 <a href="{{ .RelPermalink }}" class="btn btn-info">Read more</a>
             </div>
             <div class="col-md-6 col-sm-6" data-aos="fade-up" data-aos-duration="1500">
-                <img src="{{.Page.Params.Image}}" alt="" class="img-fluid rounded-circle">
+                <img src="{{.Page.Params.Image}}" alt="" class="rounded-circle">
             </div>
         </div>
         {{end}}
@@ -154,11 +136,11 @@
 {{define "projects"}}
 <section id="projects" class="py-5">
     <div class="container">
-        <h1 class="text-center">Projects</h1>
+        <h2 class="text-center">Projects</h2>
         <ul class="nav nav-tabs  nav-justified" id="myTab" role="tablist">
             <li class="nav-item">
                 <a class="nav-link active" id="children" data-toggle="tab" href="#children-tab" role="tab"
-                    aria-controls="children" aria-selected="true">children</a>
+                    aria-controls="children" aria-selected="true">Children</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="elder" data-toggle="tab" href="#elder-tab" role="tab" aria-controls="elder"
@@ -170,7 +152,7 @@
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="women" data-toggle="tab" href="#women-tab" role="tab" aria-controls="women"
-                    aria-selected="false">women</a>
+                    aria-selected="false">Women</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="youth" data-toggle="tab" href="#youth-tab" role="tab" aria-controls="youth"
@@ -183,7 +165,7 @@
                     <div class="col-md-6">
                         <h5>Every child has the right to good education and health. The future of a nation mainly
                             depends on the Gross National Happiness which is proportionate to the growth and development
-                            of children.<br>Charitable Trust focusses on nurturing the personal and social life of
+                            of children.<br><br>Charitable Trust focusses on nurturing the personal and social life of
                             children. The goal is to provide equal rights to every child without any social, economic
                             and religious differences. RCT served more than 1500 children in and around the slums of
                             Chennai.
@@ -201,7 +183,7 @@
                     <div class="col-md-6">
                         <h5>We feel that today’s generation has better compassion and respect for the elders, than their
                             previous generation which witnessed a lot of financial and family hurdles forcing them to
-                            leave elders at old age homes or alone. If you take social media and cinema, youngsters
+                            leave elders at old age homes or alone.<br><br>If you take social media and cinema, youngsters
                             share a lot of useful thoughts and messages about caring elders. We at RCT, has given old
                             age homes, not just for accommodation and food, but also to enable to join with their
                             families again, provide employment, healthcare and complete rehabilitation.</h5>
@@ -234,7 +216,7 @@
                             Help Groups (SHG) for women to be independent. Empowering women is everyone’s basic duty and
                             we appeal to everyone who is reading this to take care of the women in your family and give
                             your love, time, energy and financial freedom for them. When women in your family live
-                            happily, the society grows and so does a Nation.<br>Our trust supports women to live with
+                            happily, the society grows and so does a Nation.<br><br>Our trust supports women to live with
                             dignity. We create awareness about the importance of education to them and their children.
                             The SHG takes care of their financial need by training them with small business
                             opportunities. LIC gives every woman their basic insurance needed to live peacefully.
@@ -253,7 +235,7 @@
                             Nation. RCT works with the youth of the Nation who are in need of quality education, skills
                             development, health, personality development, etc. The trust educates the youth for taking
                             up major social and entrepreneurial roles in the society through carrier guidance and
-                            leadership training programs.<br>Our trust is dedicated to imparting moral values, ethics,
+                            leadership training programs.<br><br>Our trust is dedicated to imparting moral values, ethics,
                             skills, etc. so that they become socially responsible citizens. More than 2500 youths are
                             benefited every year.</h5>
                         <a href="{{.Site.BaseURL}}youth-development-projects/home/" class="btn btn-info">Read more</a>
@@ -270,7 +252,7 @@
 {{define "gallery"}}
 <section id="gallery1" class="py-5">
     <div class="container">
-        <h1 class="text-center">Gallery</h1>
+        <h2 class="text-center">Gallery</h2>
         <div class="masonry">
             {{range $index, $val := .Site.Taxonomies.tags.gallery}}
             <div class="masonry-item">
