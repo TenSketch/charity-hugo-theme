@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+{{partial "head" .}}
+<body>
+    {{partial "header-single" .}}
+    <section class="covid-intro parallax">
+        <div class="overlay">
+            <div class="container">
+                {{range $index, $val := .Site.Taxonomies.tags.covid}}
+                <h2 class="text-center pb-3">{{.Title}}</h2>
+                {{end}}
+            </div>
+        </div>
+    </section>
+    </section>
+    <section id="children" class="py-5">
+        <div class="container text-center">
+            {{range $index, $val := .Site.Taxonomies.tags.covid}}
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    {{.Content}}
+                    <div class="razorpay-embed-btn" data-url="https://pages.razorpay.com/pl_Eh4fZNcm5u0e3q/view" data-text="Donate Now" data-color="#253A96" data-size="large">
+                        <script>
+                          (function(){
+                            var d=document; var x=!d.getElementById('razorpay-embed-btn-js')
+                            if(x){ var s=d.createElement('script'); s.defer=!0;s.id='razorpay-embed-btn-js';
+                            s.src='https://cdn.razorpay.com/static/embed_btn/bundle.js';d.body.appendChild(s);} else{var rzp=window['__rzp__'];
+                            rzp && rzp.init && rzp.init()}})();
+                        </script>
+                      </div>
+                          
+                </div>
+            </div>
+            {{end}}
+        </div>
+    </section>
+    
+    {{partial "footer" .}}
+    {{partial "scripts" .}}
+</body>
+</html>

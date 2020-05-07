@@ -12,9 +12,6 @@ body {
   scroll-behavior: smooth;
 }
 .navbar {
-  -webkit-transition: padding 0.2s ease;
-  -moz-transition: padding 0.2s ease;
-  -o-transition: padding 0.2s ease;
   transition: padding 0.2s ease;
   padding: 2rem 1.2rem;
   z-index: 999;
@@ -47,9 +44,6 @@ li {
   color: rgb(22, 22, 22);
 }
 .affix {
-  -webkit-transition: padding 0.2s linear;
-  -moz-transition: padding 0.2s linear;
-  -o-transition: padding 0.2s linear;
   transition: padding 0.2s linear;
   background-color: rgb(14, 28, 92);
   padding: 1rem 0.6rem;
@@ -78,10 +72,6 @@ p {
 }
 a {
   color: #0e125c;
-  -o-transition: 0.5s;
-  -ms-transition: 0.5s;
-  -moz-transition: 0.5s;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 a:hover {
@@ -287,6 +277,9 @@ a:hover {
 .nav-tabs .nav-link.active {
   border-color: rgb(226, 226, 255);
 }
+.covid-intro{
+  background-image:url("/images/covid.jpg")
+}
 @media (max-width: 991px) {
   #contact {
     text-align: center;
@@ -342,10 +335,6 @@ address {
   z-index: 999;
   display: none;
   cursor: pointer;
-  -moz-transform: rotate(270deg);
-  -webkit-transform: rotate(270deg);
-  -o-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
   position: fixed;
   bottom: 50px;
